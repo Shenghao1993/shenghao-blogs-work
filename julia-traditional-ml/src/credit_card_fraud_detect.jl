@@ -65,7 +65,7 @@ param = [
 
 
 t = @time model = xgboost(dtrain, 1000, param=param, eval_set=dtest)
-# 429.277846 seconds (1.13 M allocations: 61.997 MiB, 0.12% compilation time)
+# 419.298300 seconds (1.13 M allocations: 61.997 MiB, 0.12% compilation time)
 # 1000 iterations
 println()
 
@@ -75,3 +75,8 @@ println("Evaluate model performance ...")
 println(binary_eval_report(y_test_vec, y_pred_prob))
 println("Precision score @0.5:", precision(y_test_vec, y_pred_prob, 0.5))
 println("Recall score @0.5: ", EvalMetrics.recall(y_test_vec, y_pred_prob, 0.5))
+
+#Dict{String, Real}("precision@fpr0.05" => 0.03090909090909091, "recall@fpr0.05" => 0.918918918918919, "accuracy@fpr0.05" => 0.9499549407207144, "au_prcurve" => 0.7210605080264554, "samples" => 85443, "true negative rate@fpr0.05" => 0.9500087930124861, "au_roccurve" => 0.9715562681493392, "prevalence" => 0.0017321489179921118)
+#Precision score @0.5:0.8531468531468531
+#Recall score @0.5: 0.8243243243243243
+
